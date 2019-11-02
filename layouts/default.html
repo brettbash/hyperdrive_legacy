@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Developed by Atomic Banana
+ *-- https://atomicbanana.co
+ -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="{{ meta_description }}">
+    <title>
+        {{ if title == 'Home' }}
+            {{ site_name }}
+        {{ else }}
+            {{ title }} | {{ site_name }}
+        {{ /if }}
+    </title>
+
+    <!-- <link rel="icon" type="image/png" href="{{ theme:images/favicon src='favicon.png' }}"> -->
+
+    <link rel="stylesheet" href="{{ mix:css src="main" }}">
+</head>
+
+
+<body class="font-sans {{ template or segment_1 or 'home' }}">
+    {{ partial:modules/header }}
+
+    <main class="page-{{ template or segment_1 or 'home' }}">
+        {{ template_content }}
+    </main>
+
+    {{ partial:modules/footer }}
+
+    <script src="{{ mix:js src="manifest" }}"></script>
+    <script src="{{ mix:js src="vendor" }}"></script>
+    <script src="{{ mix:js src="main" }}"></script>
+
+</body>
+
+</html>
